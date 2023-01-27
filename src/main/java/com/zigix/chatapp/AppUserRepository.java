@@ -18,4 +18,7 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     @Modifying
     @Query("update AppUser a set a.emailConfirmed=true where a.email=?1")
     int confirmUserEmail(String email);
+
+    @Query(value = "SELECT EXISTS (SELECT 1 FROM app_user);", nativeQuery = true)
+    boolean checkIfEmpty();
 }

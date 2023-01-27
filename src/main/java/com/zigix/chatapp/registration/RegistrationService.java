@@ -1,5 +1,6 @@
 package com.zigix.chatapp.registration;
 
+import com.zigix.chatapp.AppUserRepository;
 import com.zigix.chatapp.AppUserService;
 import com.zigix.chatapp.entity.AppUser;
 import com.zigix.chatapp.entity.AppUserRole;
@@ -36,7 +37,12 @@ public class RegistrationService {
         appUser.setUsername(appUserDTO.getUsername());
         appUser.setEmail(appUserDTO.getEmail());
         appUser.setPassword(encoder.encode(appUserDTO.getPassword()));
-        appUser.setAuthority(AppUserRole.USER);
+
+        if (appUserService.checkIfEmpty()) {
+            appUser.setAuthority(AppUserRole.ADMIN);
+        } else {
+            appUser.setAuthority(AppUserRole.USER);
+        }
 
         // save user to database
         appUserService.saveAppUser(appUser);
