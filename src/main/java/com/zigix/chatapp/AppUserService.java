@@ -68,6 +68,14 @@ public class AppUserService implements UserDetailsService {
     }
 
     @Transactional
+    public void unblockUser(Long userId) {
+        AppUser appUser = appUserRepository.findById(userId)
+                .orElseThrow();
+        appUser.setLocked(false);
+        appUserRepository.save(appUser);
+    }
+
+    @Transactional
     public void deleteUser(Long userId) {
         confirmationTokenRepository.deleteAllByOwnerId(userId);
         appUserRepository.deleteById(userId);

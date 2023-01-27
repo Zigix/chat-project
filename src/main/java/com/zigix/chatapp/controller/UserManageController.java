@@ -28,6 +28,12 @@ public class UserManageController {
         return "redirect:/users/manage";
     }
 
+    @GetMapping("/{userId}/unblock")
+    public String unblockUser(@PathVariable("userId") Long userId) {
+        appUserService.unblockUser(userId);
+        return "redirect:/users/manage";
+    }
+
     @GetMapping("/{userId}/delete")
     public String deleteUser(@PathVariable("userId") Long userId) {
         appUserService.deleteUser(userId);
