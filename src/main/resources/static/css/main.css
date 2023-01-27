@@ -6,6 +6,7 @@ html, body {
     text-align: center;
     color: #fff;
     font-size: 20px;
+    overflow: hidden;
 }
 
 .main-container {
@@ -13,6 +14,8 @@ html, body {
     margin-right: auto;
     width: 95%;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .greeting {
@@ -129,6 +132,7 @@ button {
     border-radius: 10px;
     border: 3px solid green;
     position: relative;
+    overflow: hidden;
 }
 
 .chat-title, .active-users-title, .private-users-title {
@@ -440,10 +444,11 @@ footer {
 }
 
 .manage-users-btn, .logout-btn {
-    width: 120px;
+    width: 180px;
     color: white;
     background-color: #5555ed;
     border: 3px solid #3333cb;
+    margin: 0 10px;
 }
 
 .manage-users-btn:hover, .logout-btn:hover {
@@ -452,4 +457,69 @@ footer {
 
 .manage-users-btn:focus, .logout-btn:hover {
     box-shadow: 0px 0px 5px 2px #418fc9;
+}
+
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: auto;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.main-container-login {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.kolor {
+    background: rgba(255, 255, 255, 0.07);
+
+}
+
+.tabela {
+    min-height: 200px;
+    margin-left: auto;
+    margin-top:20px;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 3px solid #05c705c9;
+    background-color: #1b1b1b;
+    padding: 30px;
+}
+
+.add-user-3 {
+
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-1-2 {
+    width: 180px;
+    color: white;
+    background-color: #5555ed;
+    border: 3px solid #3333cb;
+    margin: 6px;
+}
+
+button-1-2:hover {
+    background-color: #4444dc;
+}
+
+button-1-2:focus {
+    box-shadow: 0px 0px 5px 2px #418fc9;
+}
+
+.nav {
+    margin-top: 50px;
+}
+
+.spacing {
+    padding: 0px 60px;
 }

@@ -22,22 +22,24 @@
     </div>
 
     <div class="main-container">
-
-        <table style="border: green">
+        <div class="add-user-3">
+        <table class="tabela">
+            <p class="form-header2">Manage User list:</p>
             <tr>
-                <td>Username</td>
-                <td>Email</td>
-                <td>Blocked</td>
-                <td>Delete</td>
+                <td class="spacing">Username</td>
+                <td class="spacing">Email</td>
+                <td class="spacing">Blocked</td>
+                <td class="spacing">Delete</td>
             </tr>
             <tr th:each="user : ${users}">
                 <td th:text="${user.username}"></td>
                 <td th:text="${user.email}"></td>
-                <td th:if="${user.locked == false}"><a th:href="@{/users/manage/{userId}/block(userId=${user.id})}"><button type="button">Block</button></a></td>
-                <td th:if="${user.locked == true}"><a th:href="@{/users/manage/{userId}/unblock(userId=${user.id})}"><button type="button">Unblock</button></a></td>
-                <td><a th:href="@{/users/manage/{userId}/delete(userId=${user.id})}"><button type="button">Delete</button></a></td>
+                <td th:if="${user.locked == false}"><a th:href="@{/users/manage/{userId}/block(userId=${user.id})}"><button class="button-1-2" type="button">Block</button></a></td>
+                <td th:if="${user.locked == true}"><a th:href="@{/users/manage/{userId}/unblock(userId=${user.id})}"><button class="button-1-2" type="button">Unblock</button></a></td>
+                <td><a th:href="@{/users/manage/{userId}/delete(userId=${user.id})}"><button class="button-1-2" type="button">Delete</button></a></td>
             </tr>
         </table>
+        </div>
 
     </div>
 </div>
